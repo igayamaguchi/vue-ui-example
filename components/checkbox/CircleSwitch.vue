@@ -41,30 +41,34 @@ input {
   opacity: 0;
 }
 label {
-  padding-left: 1rem;
+  padding-left: 2rem;
 }
 label::before {
   content: '';
-  width: 1rem;
+  width: 2rem;
   height: 1rem;
   position: absolute;
   top: 0;
   left: 0;
+  border: solid 1px black;
+  border-radius: 0.5rem;
+  background-color: black;
 }
 label::after {
-  content: 'x';
+  content: '';
   color: white;
   width: 1rem;
   height: 1rem;
   position: absolute;
   top: 0;
   left: 0;
-  border: solid 1px black;
-}
-.checked::before {
-  background-color: black;
-}
-.no-checked::before {
+  border: solid 1px white;
+  border-radius: 100%;
   background-color: white;
+  transition: all 300ms 0s ease;
+  box-shadow: 1px 1px 2px 0 grey;
+}
+.checked::after {
+  left: 1rem;
 }
 </style>
