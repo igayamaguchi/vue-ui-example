@@ -1,6 +1,8 @@
 <template>
   <div>
-    <label @click.prevent="onCheck">
+    <label
+      :class="checked ? 'checked': 'no-checked'"
+      @click.prevent="onCheck">
       <span v-if="description">{{ description }}</span>
       <input
         :checked="checked"
@@ -38,13 +40,31 @@ div {
 input {
   opacity: 0;
 }
+label {
+  padding-left: 1rem;
+}
 label::before {
   content: '';
-  background-color: black;
   width: 1rem;
   height: 1rem;
   position: absolute;
   top: 0;
   left: 0;
+}
+label::after {
+  content: 'x';
+  color: white;
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: solid 1px black;
+}
+.checked::before {
+  background-color: black;
+}
+.no-checked::before {
+  background-color: white;
 }
 </style>
