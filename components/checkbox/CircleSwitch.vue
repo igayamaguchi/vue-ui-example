@@ -41,24 +41,24 @@ input {
   opacity: 0;
 }
 label {
-  padding-left: 2rem;
+  padding-left: 2em;
 }
 label::before {
   content: '';
-  width: 2rem;
-  height: 1rem;
+  width: 2em;
+  height: 1em;
   position: absolute;
   top: 0;
   left: 0;
   border: solid 1px black;
-  border-radius: 0.5rem;
+  border-radius: 0.5em;
   background-color: black;
 }
 label::after {
   content: '';
   color: white;
-  width: 1rem;
-  height: 1rem;
+  width: 1em;
+  height: 1em;
   position: absolute;
   top: 0;
   left: 0;
@@ -69,6 +69,6 @@ label::after {
   box-shadow: 1px 1px 2px 0 grey;
 }
 .checked::after {
-  left: 1rem;
+  left: 1em;
 }
 </style>

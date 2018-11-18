@@ -4,6 +4,7 @@
     <circle-switch
       :checked="onOff"
       description="CircleSwitch"
+      class="circle-switch"
       @check="circleSwitch"/>
   </div>
 </template>
@@ -30,5 +31,8 @@ export default {
 <style scoped>
 div {
   margin: 5px;
+}
+.circle-switch {
+  font-size: 30px;
 }
 </style>
