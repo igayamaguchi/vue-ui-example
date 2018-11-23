@@ -1,12 +1,12 @@
 <template>
-  <main>
+  <div>
     <h1>Checkbox</h1>
     <circle-switch
       :checked="onOff"
       description="CircleSwitch"
       class="circle-switch"
       @check="circleSwitch"/>
-  </main>
+  </div>
 </template>
 
 <script>

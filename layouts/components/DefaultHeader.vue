@@ -2,6 +2,7 @@
   <header>
     <div>
       <router-link to="checkbox">Checkbox</router-link>
+      <router-link to="button">Button</router-link>
     </div>
   </header>
 </template>
