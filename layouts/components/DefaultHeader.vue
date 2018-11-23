@@ -1,5 +1,9 @@
 <template>
-  <header>header</header>
+  <header>
+    <div>
+      <router-link to="checkbox">Checkbox</router-link>
+    </div>
+  </header>
 </template>
 
 <script>
