@@ -21,6 +21,7 @@ export default {
 
 <style scoped>
 button {
+  display: inline-block;
   min-width: 88px;
   border: 0;
   box-shadow: 5px 5px #7f828b;
