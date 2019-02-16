@@ -26,6 +26,10 @@ export default {
   name: 'NormalCarousel',
   inject: ['carousel'],
   props: {
+    displayCount: {
+      type: Number,
+      default: 1
+    },
     imgList: {
       type: Array,
       required: true
@@ -74,7 +78,7 @@ export default {
       }, 1)
     },
     left(index) {
-      const left = index * this.initialWidth - this.addWidth
+      const left = index * this.displayCount * this.initialWidth - this.addWidth
       return `${left}px`
     }
   }
@@ -84,7 +88,6 @@ export default {
 <style scoped>
 .wrap {
   position: relative;
-  width: 300px;
 }
 
 ul {
@@ -95,8 +98,8 @@ ul {
 }
 
 li {
+  width: 100%;
   position: absolute;
-  transform: matrix();
 }
 
 .prev,
@@ -109,6 +112,7 @@ li {
   background-color: gray;
   opacity: 0.5;
   user-select: none;
+  cursor: pointer;
   font-size: 35px;
 }
 .wrap:hover .prev,
