@@ -1,15 +1,12 @@
 <template>
-  <div :class="$style.wrap">
+  <div
+    :class="$style.wrap"
+    :style="wrapStyle">
     <ul>
       <li
         v-for="(img, index) in imgList"
         :key="index"
-        :class="{
-          [$style.active]: index === active,
-          [$style.inactive]: index !== active,
-          [$style.left]: isLeft(index),
-          [$style.right]: isRight(index),
-      }">
+        :style="listStyle(index)">
         <img
           :src="img"
         >
@@ -28,7 +25,7 @@
 
 <script>
 export default {
-  name: 'NormalCarousel',
+  name: 'NormalTransform3dCarousel',
   inject: ['carousel'],
   props: {
     displayCount: {
@@ -47,18 +44,50 @@ export default {
       active: 0
     }
   },
-  methods: {
-    isLeft(index) {
-      if (this.active === 0) {
-        return index === this.imgList.length - 1
-      }
-      return index === this.active - 1
+  computed: {
+    wrapStyle() {
+      return { width: this.initialWidth * this.displayCount + 'px' }
     },
-    isRight(index) {
-      if (this.active === this.imgList.length - 1) {
-        return index === 0
+    rightStyle() {
+      return {
+        display: 'block',
+        transform: `translateX(${100 * this.displayCount}%)`
       }
-      return index === this.active + 1
+    }
+  },
+  methods: {
+    calculatePosition(index) {
+      if (index === this.active) {
+        return 0
+      }
+
+      if (index < this.displayCount && index >= this.active) {
+        return index - this.active
+      }
+
+      const notEnoughCount =
+        this.displayCount - (this.imgList.length - this.active)
+
+      if (notEnoughCount > 0) {
+        if (index < notEnoughCount && index < this.displayCount) {
+          return index + this.displayCount - notEnoughCount
+        }
+      }
+
+      if (this.active > 1 && index - this.active < -1) {
+        return index + this.imgList.length - this.active
+      }
+
+      if (index === this.imgList.length - 1 && this.active === 0) {
+        return -1
+      }
+      return index - this.active
+    },
+    listStyle(index) {
+      return {
+        display: 'block',
+        transform: `translateX(${this.calculatePosition(index) * 100}%)`
+      }
     },
     prev() {
       if (this.active === 0) {
@@ -136,13 +165,8 @@ li > img {
   right: 0;
 }
 
-.slideItem {
-  width: 100%;
-}
-
 .active {
   display: block;
-  transform-style: preserve-3d;
   transform: translate3d(0, 0, 0);
 }
 

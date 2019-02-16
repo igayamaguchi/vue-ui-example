@@ -4,10 +4,11 @@
     <normal-carousel
       :display-count="1"
       :img-list="forNormalCarousel"/>
-    <normal-transform3d-carousel
-      :display-count="1"
-      :img-list="forNormalCarousel"
-      style="width: 300px; height: 200px"/>
+    <div style="width: 300px; height: 200px">
+      <normal-transform3d-carousel
+        :display-count="5"
+        :img-list="forNormalCarousel"/>
+    </div>
   </div>
 </template>
 
@@ -27,6 +28,7 @@ export default {
         '/image/first300x200.png',
         '/image/second300x200.png',
         '/image/third300x200.png',
+        'https://via.placeholder.com/300x200',
         'https://via.placeholder.com/300x200'
       ]
     }
