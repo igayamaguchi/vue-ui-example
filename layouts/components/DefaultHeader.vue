@@ -6,6 +6,7 @@
       <router-link to="card">Card</router-link>
       <router-link to="carousel">Carousel</router-link>
       <router-link to="search">Search</router-link>
+      <router-link to="drug">Drug</router-link>
     </div>
   </header>
 </template>
