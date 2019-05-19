@@ -1,8 +1,12 @@
 <template>
   <div>
-    <main>
-      <nuxt />
-    </main>
+    <ul>
+      <li>メイン画像</li>
+      <li>なんかタイトル</li>
+      <li>サイドバー</li>
+      <li>広告</li>
+    </ul>
+    material
   </div>
 </template>
 

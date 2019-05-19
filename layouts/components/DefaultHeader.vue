@@ -1,6 +1,7 @@
 <template>
   <header>
     <div>
+      <router-link to="index">Top</router-link>
       <router-link to="checkbox">Checkbox</router-link>
       <router-link to="button">Button</router-link>
       <router-link to="card">Card</router-link>
