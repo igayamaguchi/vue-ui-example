@@ -8,14 +8,14 @@ export default {
   props: {
     text: {
       type: [String, Number],
-      required: true
-    }
+      required: true,
+    },
   },
   methods: {
     onClick() {
       this.$emit('click')
-    }
-  }
+    },
+  },
 }
 </script>
 

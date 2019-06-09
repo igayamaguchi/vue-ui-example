@@ -19,7 +19,7 @@ import NormalTransform3dCarousel from '~/components/carousel/NormalTransform3dCa
 export default {
   name: 'Carousel',
   provide: {
-    carousel: this
+    carousel: this,
   },
   components: { NormalCarousel, NormalTransform3dCarousel },
   data() {
@@ -29,10 +29,10 @@ export default {
         '/image/second300x200.png',
         '/image/third300x200.png',
         'https://via.placeholder.com/300x200',
-        'https://via.placeholder.com/300x200'
-      ]
+        'https://via.placeholder.com/300x200',
+      ],
     }
-  }
+  },
 }
 </script>
 

@@ -16,7 +16,7 @@
 import 'vue-material/dist/vue-material.min.css'
 
 export default {
-  name: 'MaterialDefault'
+  name: 'MaterialDefault',
 }
 </script>
 

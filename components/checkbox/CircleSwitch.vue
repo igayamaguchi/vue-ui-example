@@ -17,19 +17,19 @@ export default {
   props: {
     checked: {
       required: true,
-      type: Boolean
+      type: Boolean,
     },
     description: {
       required: false,
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
   methods: {
     onCheck() {
       this.$emit('check', !this.checked)
-    }
-  }
+    },
+  },
 }
 </script>
 

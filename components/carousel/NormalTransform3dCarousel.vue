@@ -30,18 +30,18 @@ export default {
   props: {
     displayCount: {
       type: Number,
-      default: 1
+      default: 1,
     },
     imgList: {
       type: Array,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
       initialWidth: 300,
       addWidth: 0,
-      active: 0
+      active: 0,
     }
   },
   computed: {
@@ -51,9 +51,9 @@ export default {
     rightStyle() {
       return {
         display: 'block',
-        transform: `translateX(${100 * this.displayCount}%)`
+        transform: `translateX(${100 * this.displayCount}%)`,
       }
-    }
+    },
   },
   methods: {
     calculatePosition(index) {
@@ -86,7 +86,7 @@ export default {
     listStyle(index) {
       return {
         display: 'block',
-        transform: `translateX(${this.calculatePosition(index) * 100}%)`
+        transform: `translateX(${this.calculatePosition(index) * 100}%)`,
       }
     },
     prev() {
@@ -106,8 +106,8 @@ export default {
     left(index) {
       const left = index * this.displayCount * this.initialWidth - this.addWidth
       return `${left}px`
-    }
-  }
+    },
+  },
 }
 </script>
 

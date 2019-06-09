@@ -11,7 +11,7 @@
 import DefaultHeader from './components/DefaultHeader'
 
 export default {
-  components: { DefaultHeader }
+  components: { DefaultHeader },
 }
 </script>
 

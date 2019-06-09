@@ -29,7 +29,7 @@ export default {
       x: 0,
       y: 0,
       xBeforeDrag: 0,
-      yBeforeDrag: 0
+      yBeforeDrag: 0,
     }
   },
   mounted() {
@@ -71,8 +71,8 @@ export default {
       this.y = event.clientY
       this.xBeforeDrag = this.x
       this.yBeforeDrag = this.y
-    }
-  }
+    },
+  },
 }
 </script>
 

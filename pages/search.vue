@@ -65,9 +65,9 @@ export default {
       checkout: '',
       adult: '',
       child: '',
-      minimum: ''
+      minimum: '',
     }
-  }
+  },
 }
 </script>
 

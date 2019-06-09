@@ -17,14 +17,14 @@ export default {
   components: { CircleSwitch },
   data() {
     return {
-      onOff: false
+      onOff: false,
     }
   },
   methods: {
     circleSwitch(value) {
       this.onOff = value
-    }
-  }
+    },
+  },
 }
 </script>
 

@@ -28,18 +28,18 @@ export default {
   props: {
     displayCount: {
       type: Number,
-      default: 1
+      default: 1,
     },
     imgList: {
       type: Array,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
       initialWidth: 300,
       addWidth: 0,
-      position: 0
+      position: 0,
     }
   },
   methods: {
@@ -80,8 +80,8 @@ export default {
     left(index) {
       const left = index * this.displayCount * this.initialWidth - this.addWidth
       return `${left}px`
-    }
-  }
+    },
+  },
 }
 </script>
 

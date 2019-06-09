@@ -17,8 +17,8 @@ export default {
   methods: {
     onClickMaterialButton() {
       console.log('clicked material button')
-    }
-  }
+    },
+  },
 }
 </script>
 

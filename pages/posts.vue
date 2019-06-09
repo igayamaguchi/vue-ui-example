@@ -7,6 +7,6 @@
 <script>
 export default {
   name: 'Posts',
-  layout: 'blog'
+  layout: 'blog',
 }
 </script>
