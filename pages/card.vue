@@ -1,28 +1,29 @@
 <template>
   <div>
-    <h1>Card</h1>
-    <article>
-      <img
-        src="https://via.placeholder.com/300x200"
-        alt="placeholder">
-      <h1>タイトル</h1>
-      <p>テキスト</p>
-    </article>
+    <card
+      :article="article"
+      image="https://via.placeholder.com/300x200"
+      title="タイトル">
+      <template #default="s">
+        <p :class="s.item.style">{{ s.item.body }}</p>
+      </template>
+    </card>
   </div>
 </template>
 
 <script>
+import Card from '@/components/card/Card'
+
 export default {
   name: 'CardPage',
+  components: { Card },
+  data() {
+    return {
+      article: {
+        title: 'タイトル',
+        body: 'テキスト',
+      },
+    }
+  },
 }
 </script>
-
-<style scoped>
-article {
-  width: 300px;
-  border: solid 1px gray;
-}
-img {
-  width: 100%;
-}
-</style>
