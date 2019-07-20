@@ -3,25 +3,31 @@
     <h1>Carousel</h1>
     <normal-carousel
       :display-count="1"
-      :img-list="forNormalCarousel"/>
+      :img-list="forNormalCarousel" />
     <div style="width: 300px; height: 200px">
       <normal-transform3d-carousel
         :display-count="5"
-        :img-list="forNormalCarousel"/>
+        :img-list="forNormalCarousel" />
     </div>
+    <!--    <div style="width: 300px; height: 200px">-->
+    <scroll-snap-carousel
+      :display-count="5"
+      :img-list="forNormalCarousel" />
+      <!--    </div>-->
   </div>
 </template>
 
 <script>
 import NormalCarousel from '~/components/carousel/NormalCarousel'
 import NormalTransform3dCarousel from '~/components/carousel/NormalTransform3dCarousel.vue'
+import ScrollSnapCarousel from '~/components/carousel/ScrollSnapCarousel.vue'
 
 export default {
   name: 'Carousel',
   provide: {
     carousel: this,
   },
-  components: { NormalCarousel, NormalTransform3dCarousel },
+  components: { NormalCarousel, NormalTransform3dCarousel, ScrollSnapCarousel },
   data() {
     return {
       forNormalCarousel: [
