@@ -1,12 +1,8 @@
 <template>
   <div>
-    <label
-      :class="checked ? 'checked': 'no-checked'"
-      @click.prevent="onCheck">
+    <label :class="checked ? 'checked' : 'no-checked'" @click.prevent="onCheck">
       <span v-if="description">{{ description }}</span>
-      <input
-        :checked="checked"
-        type="checkbox">
+      <input :checked="checked" type="checkbox" />
     </label>
   </div>
 </template>
@@ -17,19 +13,19 @@ export default {
   props: {
     checked: {
       required: true,
-      type: Boolean,
+      type: Boolean
     },
     description: {
       required: false,
       type: String,
-      default: '',
-    },
+      default: ''
+    }
   },
   methods: {
     onCheck() {
       this.$emit('check', !this.checked)
-    },
-  },
+    }
+  }
 }
 </script>
 

@@ -8,16 +8,14 @@
       <router-link to="carousel">Carousel</router-link>
       <router-link to="search">Search</router-link>
       <router-link to="drug">Drug</router-link>
-      <router-link to="material">Material</router-link>
     </div>
   </header>
 </template>
 
 <script>
 export default {
-  name: 'Header',
+  name: 'Header'
 }
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

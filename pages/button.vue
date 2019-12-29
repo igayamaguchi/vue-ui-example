@@ -2,9 +2,10 @@
   <div>
     <h1>Button</h1>
     <material-button
+      @click="onClickMaterialButton"
       text="Button"
       class="material-button"
-      @click="onClickMaterialButton"/>
+    />
   </div>
 </template>
 
@@ -17,8 +18,8 @@ export default {
   methods: {
     onClickMaterialButton() {
       console.log('clicked material button')
-    },
-  },
+    }
+  }
 }
 </script>
 

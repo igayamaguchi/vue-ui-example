@@ -9,13 +9,11 @@
     <div
       ref="rect"
       :class="$style.card"
-      :style="{ position: 'relative',
-                left: `${x}px`,
-                top: `${y}px`
-      }"
-      draggable="true"
+      :style="{ position: 'relative', left: `${x}px`, top: `${y}px` }"
       @dragstart="handleDragstart"
-      @dragend="handleDragend">
+      @dragend="handleDragend"
+      draggable="true"
+    >
       contents
     </div>
   </div>
@@ -29,7 +27,7 @@ export default {
       x: 0,
       y: 0,
       xBeforeDrag: 0,
-      yBeforeDrag: 0,
+      yBeforeDrag: 0
     }
   },
   mounted() {
@@ -71,8 +69,8 @@ export default {
       this.y = event.clientY
       this.xBeforeDrag = this.x
       this.yBeforeDrag = this.y
-    },
-  },
+    }
+  }
 }
 </script>
 

@@ -2,9 +2,7 @@
   <div>
     <h1>Card</h1>
     <article>
-      <img
-        v-if="image"
-        :src="image">
+      <img v-if="image" :src="image" />
       <h1 v-if="title">{{ title }}</h1>
       <slot :item="item" />
     </article>
@@ -18,28 +16,28 @@ export default {
     image: {
       type: String,
       required: false,
-      default: '',
+      default: ''
     },
     title: {
       type: String,
       required: false,
-      default: '',
+      default: ''
     },
     article: {
       type: Object,
       required: false,
-      default: null,
-    },
+      default: null
+    }
   },
   computed: {
     item() {
       console.log(this.$style.body)
       return {
         body: this.article.body,
-        style: [this.$style.body],
+        style: [this.$style.body]
       }
-    },
-  },
+    }
+  }
 }
 </script>
 

@@ -1,20 +1,12 @@
 <template>
   <div :class="$style.wrap">
     <ul ref="listWrap">
-      <li
-        v-for="(img, index) in imgList"
-        :key="index">
-        <img :src="img">
+      <li v-for="(img, index) in imgList" :key="index">
+        <img :src="img" />
       </li>
     </ul>
-    <div
-      :class="$style.prev"
-      @click="prev">&lt;
-    </div>
-    <div
-      :class="$style.next"
-      @click="next">&gt;
-    </div>
+    <div :class="$style.prev" @click="prev">&lt;</div>
+    <div :class="$style.next" @click="next">&gt;</div>
   </div>
 </template>
 
@@ -26,18 +18,18 @@ export default {
   props: {
     displayCount: {
       type: Number,
-      default: 1,
+      default: 1
     },
     imgList: {
       type: Array,
-      required: true,
-    },
+      required: true
+    }
   },
   data() {
     return {
       initialWidth: IMG_WIDTH,
       addWidth: 0,
-      active: 0,
+      active: 0
     }
   },
   mounted() {
@@ -60,13 +52,13 @@ export default {
       // GOOD
       this.$refs.listWrap.scrollTo({
         behavior: 'smooth',
-        left: this.active * IMG_WIDTH,
+        left: this.active * IMG_WIDTH
       })
 
       // NO GOOD because disable snap
       // this.$refs.listWrap.scrollLeft = this.active * IMG_WIDTH
-    },
-  },
+    }
+  }
 }
 </script>
 

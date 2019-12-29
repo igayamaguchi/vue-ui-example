@@ -3,7 +3,8 @@
     <card
       :article="article"
       image="https://via.placeholder.com/300x200"
-      title="タイトル">
+      title="タイトル"
+    >
       <template #default="s">
         <p :class="s.item.style">{{ s.item.body }}</p>
       </template>
@@ -21,9 +22,9 @@ export default {
     return {
       article: {
         title: 'タイトル',
-        body: 'テキスト',
-      },
+        body: 'テキスト'
+      }
     }
-  },
+  }
 }
 </script>

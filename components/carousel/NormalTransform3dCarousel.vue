@@ -1,25 +1,16 @@
 <template>
-  <div
-    :class="$style.wrap"
-    :style="wrapStyle">
+  <div :class="$style.wrap" :style="wrapStyle">
     <ul>
       <li
         v-for="(img, index) in imgList"
         :key="index"
-        :style="listStyle(index)">
-        <img
-          :src="img"
-        >
+        :style="listStyle(index)"
+      >
+        <img :src="img" />
       </li>
     </ul>
-    <div
-      :class="$style.prev"
-      @click="prev">&lt;
-    </div>
-    <div
-      :class="$style.next"
-      @click="next">&gt;
-    </div>
+    <div :class="$style.prev" @click="prev">&lt;</div>
+    <div :class="$style.next" @click="next">&gt;</div>
   </div>
 </template>
 
@@ -30,18 +21,18 @@ export default {
   props: {
     displayCount: {
       type: Number,
-      default: 1,
+      default: 1
     },
     imgList: {
       type: Array,
-      required: true,
-    },
+      required: true
+    }
   },
   data() {
     return {
       initialWidth: 300,
       addWidth: 0,
-      active: 0,
+      active: 0
     }
   },
   computed: {
@@ -51,9 +42,9 @@ export default {
     rightStyle() {
       return {
         display: 'block',
-        transform: `translateX(${100 * this.displayCount}%)`,
+        transform: `translateX(${100 * this.displayCount}%)`
       }
-    },
+    }
   },
   methods: {
     calculatePosition(index) {
@@ -86,7 +77,7 @@ export default {
     listStyle(index) {
       return {
         display: 'block',
-        transform: `translateX(${this.calculatePosition(index) * 100}%)`,
+        transform: `translateX(${this.calculatePosition(index) * 100}%)`
       }
     },
     prev() {
@@ -106,8 +97,8 @@ export default {
     left(index) {
       const left = index * this.displayCount * this.initialWidth - this.addWidth
       return `${left}px`
-    },
-  },
+    }
+  }
 }
 </script>
 

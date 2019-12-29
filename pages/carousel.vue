@@ -1,30 +1,27 @@
 <template>
   <div :class="$style.wrap">
     <h1>Carousel</h1>
-    <normal-carousel
-      :display-count="1"
-      :img-list="forNormalCarousel" />
+    <normal-carousel :display-count="1" :img-list="forNormalCarousel" />
     <div style="width: 300px; height: 200px">
       <normal-transform3d-carousel
         :display-count="5"
-        :img-list="forNormalCarousel" />
+        :img-list="forNormalCarousel"
+      />
     </div>
     <!--    <div style="width: 300px; height: 200px">-->
-    <scroll-snap-carousel
-      :display-count="5"
-      :img-list="forNormalCarousel" />
+    <scroll-snap-carousel :display-count="5" :img-list="forNormalCarousel" />
     <!--    </div>-->
     <div class="slider-wrapper">
       <div class="slider">
-        <div
-          v-for="img in forNormalCarousel"
-          :key="img"
-          class="unit">
-          <p class="img"><img :src="img" ></p>
+        <div v-for="img in forNormalCarousel" :key="img" class="unit">
+          <p class="img"><img :src="img" /></p>
           <p class="caption">キャプションです。</p>
-        </div><!-- /.unit -->
-      </div><!-- /.slider -->
-    </div><!-- /.slider-wrapper -->
+        </div>
+        <!-- /.unit -->
+      </div>
+      <!-- /.slider -->
+    </div>
+    <!-- /.slider-wrapper -->
   </div>
 </template>
 
@@ -36,7 +33,7 @@ import ScrollSnapCarousel from '~/components/carousel/ScrollSnapCarousel.vue'
 export default {
   name: 'Carousel',
   provide: {
-    carousel: this,
+    carousel: this
   },
   components: { NormalCarousel, NormalTransform3dCarousel, ScrollSnapCarousel },
   data() {
@@ -46,10 +43,10 @@ export default {
         '/image/second300x200.png',
         '/image/third300x200.png',
         'https://via.placeholder.com/300x200',
-        'https://via.placeholder.com/300x200',
-      ],
+        'https://via.placeholder.com/300x200'
+      ]
     }
-  },
+  }
 }
 </script>
 

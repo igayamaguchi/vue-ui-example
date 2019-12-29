@@ -4,20 +4,13 @@
       <li
         v-for="(img, index) in imgList"
         :key="index"
-        :style="{left: left(index)}">
-        <img
-          :src="img"
-        >
+        :style="{ left: left(index) }"
+      >
+        <img :src="img" />
       </li>
     </ul>
-    <div
-      class="prev"
-      @click="prev">&lt;
-    </div>
-    <div
-      class="next"
-      @click="next">&gt;
-    </div>
+    <div @click="prev" class="prev">&lt;</div>
+    <div @click="next" class="next">&gt;</div>
   </div>
 </template>
 
@@ -28,18 +21,18 @@ export default {
   props: {
     displayCount: {
       type: Number,
-      default: 1,
+      default: 1
     },
     imgList: {
       type: Array,
-      required: true,
-    },
+      required: true
+    }
   },
   data() {
     return {
       initialWidth: 300,
       addWidth: 0,
-      position: 0,
+      position: 0
     }
   },
   methods: {
@@ -80,8 +73,8 @@ export default {
     left(index) {
       const left = index * this.displayCount * this.initialWidth - this.addWidth
       return `${left}px`
-    },
-  },
+    }
+  }
 }
 </script>
 
