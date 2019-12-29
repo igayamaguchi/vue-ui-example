@@ -31,7 +31,7 @@ export default {
   },
   computed: {
     item() {
-      console.log(this.$style.body)
+      // console.log(this.$style.body)
       return {
         body: this.article.body,
         style: [this.$style.body]

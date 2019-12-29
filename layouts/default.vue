@@ -1,6 +1,7 @@
 <template>
   <div>
     <default-header />
+    <sidebar />
     <main>
       <nuxt />
     </main>
@@ -9,16 +10,46 @@
 
 <script>
 import DefaultHeader from './components/DefaultHeader.vue'
+import Sidebar from './components/Sidebar.vue'
 
 export default {
-  components: { DefaultHeader }
+  components: { Sidebar, DefaultHeader }
 }
 </script>
 
 <style>
+/*https://qiita.com/RinoTsuka/items/b30e03ce10aa38ac2a10*/
+@font-face {
+  font-family: 'Original Yu Gothic';
+  src: local('Yu Gothic Medium');
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'Original Yu Gothic';
+  src: local('Yu Gothic Medium');
+  font-weight: 200;
+}
+@font-face {
+  font-family: 'Original Yu Gothic';
+  src: local('Yu Gothic Medium');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Original Yu Gothic';
+  src: local('Yu Gothic Medium');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Original Yu Gothic';
+  src: local('Yu Gothic Bold');
+  font-weight: bold;
+}
+
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Hiragino Sans', 'Noto Sans CJK JP', 'Original Yu Gothic', 'Yu Gothic',
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Sans Emoji';
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -63,5 +94,16 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+main {
+  margin: 60px 0 0 300px;
+  padding: 15px 0 0 25px;
+}
+
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: #000;
 }
 </style>

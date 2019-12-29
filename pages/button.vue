@@ -17,7 +17,7 @@ export default {
   components: { MaterialButton },
   methods: {
     onClickMaterialButton() {
-      console.log('clicked material button')
+      // console.log('clicked material button')
     }
   }
 }

@@ -56,15 +56,15 @@ export default {
     //   // this.y = event.y - this.yBeforeDrag
     // },
     handleDragstart(event) {
-      console.log('drag start')
+      // console.log('drag start')
       // console.log(event)
       // this.xBeforeDrag = event.x
       // this.yBeforeDrag = event.y
     },
     handleDragend(event) {
-      console.log('drag end')
-      console.log(event)
-      console.log(event.clientY)
+      // console.log('drag end')
+      // console.log(event)
+      // console.log(event.clientY)
       this.x = event.clientX
       this.y = event.clientY
       this.xBeforeDrag = this.x
