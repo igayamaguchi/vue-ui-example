@@ -13,7 +13,18 @@
     <scroll-snap-carousel
       :display-count="5"
       :img-list="forNormalCarousel" />
-      <!--    </div>-->
+    <!--    </div>-->
+    <div class="slider-wrapper">
+      <div class="slider">
+        <div
+          v-for="img in forNormalCarousel"
+          :key="img"
+          class="unit">
+          <p class="img"><img :src="img" ></p>
+          <p class="caption">キャプションです。</p>
+        </div><!-- /.unit -->
+      </div><!-- /.slider -->
+    </div><!-- /.slider-wrapper -->
   </div>
 </template>
 
@@ -45,5 +56,44 @@ export default {
 <style module>
 .wrap {
   margin: 200px;
+}
+</style>
+<style>
+.slider-wrapper {
+  width: 600px;
+  padding: 5px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  background: #ccc;
+}
+
+.slider {
+  width: 850px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.slider > * {
+  -webkit-transform: translateZ(0px);
+}
+
+.slider-wrapper::-webkit-scrollbar {
+  display: none;
+  height: 0 !important;
+}
+
+.unit {
+  float: left;
+  width: 150px;
+  margin: 0 0 0 5px;
+  border: 1px solid #dddddd;
+  background: #efefef;
+}
+
+.unit:first-child {
+  margin: 0;
+}
+
+.unit .img {
+  text-align: center;
 }
 </style>
