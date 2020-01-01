@@ -9,6 +9,7 @@
     <router-link to="search">Search</router-link>
     <router-link to="drug">Drug</router-link>
     <router-link to="input">Input</router-link>
+    <router-link to="transition">Transition</router-link>
   </nav>
 </template>
 
