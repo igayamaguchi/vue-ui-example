@@ -15,12 +15,12 @@
         @mousemove="onMousemove"
         :class="$style.circle"
         :style="circleStyles"
-        draggable="false"
+        draggable="true"
       ></div>
     </div>
     <input v-model="value" type="number" />
     <transition name="range">
-      <input v-model="value" type="range" max="10" />
+      <input v-model="value" type="range" :max="maxValue" />
     </transition>
   </div>
 </template>
