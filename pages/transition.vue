@@ -4,10 +4,11 @@
     <div>
       <button @click="expand = !expand">Expand</button>
       <expand-transition>
-        <div v-show="false" :class="$style.expandBox"></div>
-      </expand-transition>
-      <expand-transition2>
         <div v-show="expand" :class="$style.expandBox"></div>
+      </expand-transition>
+      <button @click="expand2 = !expand2">Expand</button>
+      <expand-transition2>
+        <div v-show="expand2" :class="$style.expandBox"></div>
       </expand-transition2>
     </div>
   </div>
@@ -20,7 +21,7 @@ export default {
   name: 'Transition',
   components: { ExpandTransition, ExpandTransition2 },
   data() {
-    return { expand: false }
+    return { expand: false, expand2: false }
   }
 }
 </script>
