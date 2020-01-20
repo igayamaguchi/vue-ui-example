@@ -96,6 +96,8 @@ html {
   background-color: #35495e;
 }
 main {
+  /* for IE */
+  display: block;
   margin: 60px 0 0 300px;
   padding: 15px 0 0 25px;
 }
