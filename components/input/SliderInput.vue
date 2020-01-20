@@ -20,7 +20,7 @@
     </div>
     <input v-model="value" type="number" />
     <transition name="range">
-      <input v-model="value" type="range" :max="maxValue" />
+      <input v-model="value" :max="maxValue" type="range" />
     </transition>
   </div>
 </template>

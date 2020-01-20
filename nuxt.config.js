@@ -1,3 +1,6 @@
+import postcssImport from 'postcss-import'
+import postcssPresetEnv from 'postcss-preset-env'
+
 export default {
   mode: 'universal',
   /*
@@ -23,7 +26,13 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['@/assets/css/colors.css'],
+  // css: [],
+  css: ['~assets/css/colors.css'],
+  // css: [
+  //   {
+  //     src: '~assets/css/colors.css'
+  //   }
+  // ],
   /*
    ** Plugins to load before mounting the App
    */
@@ -48,6 +57,24 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
-  }
+    extend(config, ctx) {
+      // config.devtool = 'eval'
+    },
+    postcss: {
+      // browsers: ['IE 11'],
+      plugins: [
+        // postcssImport(),
+        // postcssPresetEnv({
+        //   stage: 0,
+        //   browsers: 'cover 90%, last 2 major versions',
+        //   preserve: false,
+        // }),
+        // require('postcss-custom-properties')({
+        //   preserve: false,
+        //   importFrom: './assets/css/colors.css'
+        // })
+      ]
+    }
+  },
+  sourceMap: false
 }

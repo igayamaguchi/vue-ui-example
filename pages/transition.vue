@@ -27,6 +27,8 @@ export default {
 </script>
 
 <style module>
+/*@import 'assets/css/colors.css';*/
+
 .expandBox {
   width: 300px;
   height: 200px;

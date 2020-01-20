@@ -15,6 +15,8 @@ export default {
 </script>
 
 <style scoped>
+/*@import 'assets/css/colors.css';*/
+
 header {
   position: fixed;
   top: 0;
