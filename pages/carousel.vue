@@ -22,10 +22,16 @@
       <!-- /.slider -->
     </div>
     <!-- /.slider-wrapper -->
+    <slot-carousel class="slot-carousel">
+      <div v-for="(img, index) in forNormalCarousel" :key="index">
+        <img :src="img" />
+      </div>
+    </slot-carousel>
   </div>
 </template>
 
 <script>
+import SlotCarousel from '../components/carousel/SlotCarousel/SlotCarousel.vue'
 import NormalCarousel from '~/components/carousel/NormalCarousel'
 import NormalTransform3dCarousel from '~/components/carousel/NormalTransform3dCarousel.vue'
 import ScrollSnapCarousel from '~/components/carousel/ScrollSnapCarousel.vue'
@@ -35,7 +41,12 @@ export default {
   provide: {
     carousel: this
   },
-  components: { NormalCarousel, NormalTransform3dCarousel, ScrollSnapCarousel },
+  components: {
+    SlotCarousel,
+    NormalCarousel,
+    NormalTransform3dCarousel,
+    ScrollSnapCarousel
+  },
   data() {
     return {
       forNormalCarousel: [
@@ -55,7 +66,7 @@ export default {
   margin: 200px;
 }
 </style>
-<style>
+<style scoped>
 .slider-wrapper {
   width: 600px;
   padding: 5px;
@@ -92,5 +103,8 @@ export default {
 
 .unit .img {
   text-align: center;
+}
+.slot-carousel {
+  width: 600px;
 }
 </style>
